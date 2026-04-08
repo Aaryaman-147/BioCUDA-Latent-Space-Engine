@@ -41,6 +41,15 @@ To validate the architecture, the engine was tasked with an *In-Silico* screenin
 
 ---
 
+## 💻 Tech Stack
+* **Core ML Framework:** PyTorch
+* **GPU Optimization:** NVIDIA Triton (Flash Attention), CUDA Graphs, Automatic Mixed Precision (AMP)
+* **Quantization & Edge Inference:** `bitsandbytes` (INT8)
+* **API & Data Validation:** FastAPI, Regex
+* **Data Science & Visualization:** Scikit-Learn (PCA), Matplotlib, NumPy
+
+---
+
 ### Prerequisites
 * Python 3.10+
 * NVIDIA GPU (15GB+ VRAM for Edge, 40GB+ for Batch processing)
