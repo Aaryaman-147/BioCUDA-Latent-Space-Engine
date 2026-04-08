@@ -9,6 +9,14 @@ BioCUDA is a high-throughput, dual-branch machine learning infrastructure design
 
 ---
 
+## ✨ Key Features
+* **Dual-Hardware Compatibility:** Seamlessly swaps between 15GB VRAM edge deployments and 80GB VRAM enterprise clusters.
+* **FP32 Guard Bypass:** Eliminates 16-bit tensor overflow and `NaN` corruption during high-speed extraction.
+* **Regex Validation Firewall:** Protects GPU memory from crashing by filtering invalid amino acid sequences at the API level.
+* **Automated Latent Space Mapping:** Compresses 2,560-dimensional protein embeddings into 2D functional radar plots for immediate visual analysis.
+
+---
+
 ## 🖥️ Dashboard Interface
 *The React frontend (currently hosted on Vercel) interacting with the Latent Space Engine.*
 
