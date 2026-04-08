@@ -87,7 +87,6 @@ The dual-branch architecture was strictly benchmarked to ensure optimal hardware
 | **Model Precision** | INT8 (`bitsandbytes`) | FP16 (with FP32 Guard) |
 | **Throughput** | ~1 Protein / sec | **36+ Proteins / sec** |
 | **Memory Optimization** | 50% Footprint Compression | Native CUDA Graphs |
-| **Primary Use Case** | Live Dashboard / Web API | Massive Dataset In-Silico Screening |
 
 ---
 
