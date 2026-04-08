@@ -90,6 +90,23 @@ The dual-branch architecture was strictly benchmarked to ensure optimal hardware
 
 ---
 
+## 🚧 Current Limitations
+
+No system is without its trade-offs. The current architecture has a few known constraints:
+* **Strict CUDA Dependency:** The Edge API relies heavily on `bitsandbytes` for 8-bit compression, meaning the FastAPI server strictly requires an active NVIDIA GPU and cannot be hosted on standard CPU-only platforms like Render or Railway.
+* **Cold Boot Latency:** Loading a 3 Billion parameter model into GPU memory takes approximately 20–30 seconds. In a serverless environment, this results in a noticeable "cold start" delay for the first API request.
+* **Enterprise Cloud Costs:** Maintaining a 24/7 active pipeline for the A100 Speed Branch is highly cost-prohibitive, requiring manual boot-ups for batch processing runs.
+
+---
+
+## 🔮 Future Work & Roadmap
+
+* **Real-World Dataset Integration:** Transitioning from the synthetic 1,000-enzyme test batch to a live, 10,000+ protein dataset directly queried from NCBI or UniProt databases.
+* **Serverless GPU Migration:** Re-architecting the FastAPI backend to deploy on serverless ML platforms (like Modal or RunPod) to eliminate idle GPU costs while maintaining 24/7 API availability.
+* **3D Structural Mapping:** Expanding the React dashboard to not only plot 2D latent space but to render the predicted 3D folding structures of anomalous protein clusters.
+
+---
+
 ## 💻 Tech Stack
 * **Core ML Framework:** PyTorch
 * **GPU Optimization:** NVIDIA Triton (Flash Attention), CUDA Graphs, Automatic Mixed Precision (AMP)
