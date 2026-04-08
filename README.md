@@ -45,6 +45,3 @@ To validate the architecture, the engine was tasked with an *In-Silico* screenin
 * Python 3.10+
 * NVIDIA GPU (15GB+ VRAM for Edge, 40GB+ for Batch processing)
 * CUDA Toolkit installed
-git clone [https://github.com/yourusername/BioCUDA-Latent-Space-Engine.git](https://github.com/yourusername/BioCUDA-Latent-Space-Engine.git)
-cd BioCUDA-Latent-Space-Engine
-pip install -r requirements.txt
