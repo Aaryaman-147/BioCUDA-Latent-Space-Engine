@@ -9,6 +9,16 @@ BioCUDA is a high-throughput, dual-branch machine learning infrastructure design
 
 ---
 
+## 🖥️ Dashboard Interface
+*The React frontend (currently hosted on Vercel) interacting with the Latent Space Engine.*
+
+<div align="center">
+  <img src="assets/ui-sleep-mode.png" width="800" alt="BioCUDA Dashboard Sleep Mode"/>
+  <br/>
+  <img src="assets/ui-single-heatmap.png" width="400" alt="Single Sequence Heatmap"/>
+  <img src="assets/ui-batch-clustering.png" width="400" alt="Batch AI Clustering"/>
+</div>
+
 ## 🏗️ The Dual-Architecture System
 
 Because a 3B parameter model natively causes Out-Of-Memory (OOM) crashes on standard hardware, this inference pipeline is forked into two specialized branches:
