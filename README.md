@@ -82,7 +82,7 @@ The dual-branch architecture was strictly benchmarked to ensure optimal hardware
 
 | Metric | Stability Branch (Edge) | Speed Branch (Lab) |
 | :--- | :--- | :--- |
-| **Target Hardware** | NVIDIA T4 / L4 | NVIDIA A100 / H100 |
+| **Target Hardware** | NVIDIA T4 / L4 | NVIDIA A100  |
 | **VRAM Requirement** | 15 GB+ | 40 GB - 80 GB |
 | **Model Precision** | INT8 (`bitsandbytes`) | FP16 (with FP32 Guard) |
 | **Throughput** | ~1 Protein / sec | **36+ Proteins / sec** |
