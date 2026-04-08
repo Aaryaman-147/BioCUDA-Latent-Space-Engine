@@ -27,6 +27,21 @@ Built for massive dataset processing and *In-Silico* Screening.
 
 ---
 
+## 🛤️ The Engineering Journey (Architecture Evolution)
+
+Building this system was an iterative process of overcoming severe hardware bottlenecks. The architecture evolved through three distinct phases:
+
+**1. The Local Bottleneck (CPU/Consumer GPU)**
+Initially, the project was deployed locally. However, loading a foundation model with 3 Billion parameters natively requires immense memory. The local Windows environment immediately suffered Out-Of-Memory (OOM) crashes, proving that a monolithic local architecture was impossible for this scale.
+
+**2. The T4 Cloud Migration (Solving for Memory)**
+To achieve stable, live inference for the React dashboard, the backend was migrated to a cloud-based NVIDIA T4 GPU (Google Colab). To squeeze the massive model into the T4's strict 15GB VRAM ceiling, the engine was rebuilt using `bitsandbytes` INT8 quantization, compressing the memory footprint by 50% and successfully connecting to the local UI via Localtunnel.
+
+**3. The A100 Scaling (Solving for Speed)**
+While the T4 pipeline was perfect for single-sequence web requests, running an *In-Silico* screening of 1,000+ proteins was too slow. For the batch-processing lab environment, the architecture was upgraded to a Lightning AI NVIDIA A100 cluster (80GB VRAM). By dropping the 8-bit compression and utilizing pure FP16 math with expanded CUDA Graphs (`max_tokens=65536`), the pipeline was accelerated to process 36+ proteins per second.
+
+---
+
 ## 🧗 Challenges Overcome: The FP16 "NaN Poisoning"
 During A100 stress testing, forcing the 3B model into pure 16-bit precision to maximize speed resulted in memory register overflows, yielding `NaN` (Not a Number) corruption in the final embeddings. 
 
